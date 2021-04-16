@@ -12,7 +12,7 @@ if(text.find(':.in-oper') != -1):         # Gets triggered when a user types .in
                 nick = nick_substring.group(1)              # Gets the nickname
             if(who.find('#bot ' + nick + ' ') != -1):       # Finds if the user is in #bot
                 conn.send(bytes("PRIVMSG " + '#channel' + " Your in #bot\n", 'UTF-8')) # Alerts the channel that your in #bot
-            if(who.find('#bot ' + nick + ' ') == -1):       # Finds if the user is not in #bot
+            else:       # Finds if the user is not in #bot
                 conn.send(bytes("PRIVMSG " + '#channel' + " Your not in #bot\n", 'UTF-8'))  # Sends that your not in #bot
             who = None  # Sets bot to None to avoid old data
             
